@@ -9,19 +9,19 @@
    - Adicionar o Arquivo: Microsoft.PowerShell_profile.ps1 com as configurações abaixo.
 ```powershell
 Set-ExecutionPolicy Unrestricted
-Install-Module PSReadLine -Force -SkipPublisherCheck -AllowPrerelease
-Install-Module posh-git -Force -SkipPublisherCheck -AllowPrerelease
-Install-Module oh-my-posh -Force -SkipPublisherCheck -AllowPrerelease
+Install-Module PSReadLine -Scope CurrentUser -AllowPrerelease
+Install-Module posh-git -Scope CurrentUser -AllowPrerelease
+Install-Module oh-my-posh -Scope CurrentUser -AllowPrerelease
 Import-Module posh-git
 Import-Module oh-my-posh
 
-Set-Prompt slim
+Set-PoshPrompt -Theme slim
 
 # this will override your current profile, so if you have something custom, do not execute it.
 $sb = New-Object -TypeName System.Text.StringBuilder
 $sb.AppendLine("Import-Module posh-git");
 $sb.AppendLine("Import-Module oh-my-posh");
-$sb.AppendLine("Set-Theme slim");
+$sb.AppendLine("Set-PoshPrompt -Theme slim");
 $sb.AppendLine("Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete");
 $sb.AppendLine("Set-PSReadLineOption -PredictionSource History");
 
