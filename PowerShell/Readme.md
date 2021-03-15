@@ -9,9 +9,9 @@
    - Adicionar o Arquivo: Microsoft.PowerShell_profile.ps1 com as configurações abaixo.
 ```powershell
 Set-ExecutionPolicy Unrestricted
-Install-Module PSReadLine -Scope CurrentUser -AllowPrerelease
-Install-Module posh-git -Scope CurrentUser -AllowPrerelease
-Install-Module oh-my-posh -Scope CurrentUser -AllowPrerelease
+Install-Module PSReadLine -Force -Scope CurrentUser -AllowPrerelease
+Install-Module posh-git -Force -Scope CurrentUser -AllowPrerelease
+Install-Module oh-my-posh -Force -Scope CurrentUser -AllowPrerelease
 Import-Module posh-git
 Import-Module oh-my-posh
 
